@@ -5,7 +5,7 @@ import kotlin.math.max
 class MockExam {
     fun solution(answers: IntArray): IntArray {
         val students = IntArray(3) { 0 }
-        for (i in answers.indices) {
+        for (i: Int in answers.indices) {
             val answer = answers[i];
 
             if (answer == Giver.ONE.answers[(i % 5)]) {
@@ -19,11 +19,11 @@ class MockExam {
             }
         }
 
-        val max = max(students[0], max(students[1], students[2]))
+        val max: Int = max(students[0], max(students[1], students[2]))
 
         val resultList = mutableListOf<Int>()
 
-        for (i in students.indices) {
+        for (i: Int in students.indices) {
             if (max == students[i]) {
                 resultList.add(i + 1);
             }
@@ -31,7 +31,7 @@ class MockExam {
 
         val results = IntArray(resultList.size)
 
-        for (i in resultList.indices) {
+        for (i: Int in resultList.indices) {
             results[i] = resultList[i]
         }
 
